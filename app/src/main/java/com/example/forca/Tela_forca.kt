@@ -6,13 +6,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputLayout
 import java.util.Locale
 
 class Tela_forca : AppCompatActivity() {
 
+    // Instância da classe Forca para gerenciar o jogo
     val forca = Forca()
+
+    // Elementos da interface do usuário
     lateinit var vidas: TextView
     lateinit var inputChute : EditText
     lateinit var btnVerificar : Button
@@ -52,7 +56,20 @@ class Tela_forca : AppCompatActivity() {
     lateinit var btnZ: ImageButton
     lateinit var btnAtio: ImageButton
 
+    //tentativa de simplificar o codigo de instancia e funcionamento dos botoes -- ARRUMAR DEPOIS
+    /*    val botoesMap: Map<String, String> = mapOf(
+        "btnA" to "A", "btnB" to "B", "btnC" to "C", "btnD" to "D",
+        "btnE" to "E", "btnF" to "F", "btnG" to "G", "btnH" to "H",
+        "btnI" to "I", "btnJ" to "J", "btnK" to "K", "btnL" to "L",
+        "btnM" to "M", "btnN" to "N", "btnO" to "O", "btnP" to "P",
+        "btnQ" to "Q", "btnR" to "R", "btnS" to "S", "btnT" to "T",
+        "btnU" to "U", "btnV" to "V", "btnW" to "W", "btnX" to "X",
+        "btnY" to "Y", "btnZ" to "Z", "btnAtio" to "Ã"
+    )*/
 
+/*    val letras = listOf(
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ã'
+    )*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +80,25 @@ class Tela_forca : AppCompatActivity() {
         intentResultado = Intent(this,Tela_resultado::class.java)
         vidas.setText("${forca.tentativasRestantes}")
 
+        //tentativa de simplificar o codigo de instancia e funcionamento dos botoes -- ARRUMAR DEPOIS
+ /*       botoesMap.forEach { (id, letraIt) ->
+            val id = findViewById<ImageButton>(resources.getIdentifier(id, "id", packageName))
 
+            id.setOnClickListener {
+                letra = letraIt.firstOrNull() ?: '\u0000'
+                validarLetra()
+
+                if (forca.getPalavraSecreta().contains(letra ?: '\u0000')) {
+                    val drawableId = resources.getIdentifier("letra_${letra?.toLowerCase()}_correta", "drawable", packageName)
+                    id.setBackgroundResource(drawableId)
+                } else {
+                    id.isEnabled = false
+                    id.background = null
+                }
+            }
+        }*/
+
+        //fazendo a verificação ao clique de cada letra
         btnA.setOnClickListener{
             letra = 'A'
             validarLetra()
@@ -335,9 +370,11 @@ class Tela_forca : AppCompatActivity() {
             }
         }
 
+        //verificando chute
         btnVerificar.setOnClickListener {
-            caixaInputChute.error = null
+            caixaInputChute.error = null // tirando o error do botao
 
+            //verificação se o jogador ainda tem vidas(perdeu) ou se nao tem mais linhas(ganhou)
             if (forca.tentativasRestantes > 0 && '_' in forca.palavraAdivinhada){
 
                 var chuteDigitado: String? = inputChute.text.toString()
@@ -354,16 +391,21 @@ class Tela_forca : AppCompatActivity() {
                     caixaInputChute.requestFocus()
                 }
             }
-
+            //zerando caixa de chute
             inputChute.setText("")
+
+            //chamando função para verificar o chute
             verificar()
         }
 
     }
 
+    // Função para validar uma letra escolhida pelo usuário
     fun validarLetra(){
+        // Verifica se o jogo ainda está em andamento
         if (forca.tentativasRestantes > 0 && '_' in forca.palavraAdivinhada){
             if (letra != null){
+                // Realiza a verificação da letra na palavra
                 forca.verificarLetra(letra!!)
                 vidas.setText("${forca.tentativasRestantes}")
                 palavraSecreta.setText(forca.palavraAdivinhada.joinToString("  "))
@@ -372,6 +414,7 @@ class Tela_forca : AppCompatActivity() {
         verificar()
     }
 
+    // Função para inicializar os elementos da interface chamada no oncreate
     fun inicializarElementos(){
         vidas = findViewById(R.id.txt_vidas)
         inputChute = findViewById(R.id.input_chute)
@@ -407,17 +450,42 @@ class Tela_forca : AppCompatActivity() {
         btnY= findViewById(R.id.btn_y)
         btnZ= findViewById(R.id.btn_z)
         btnAtio= findViewById(R.id.btn_atio)
+
+        //tentativa de simplificar o codigo de instancia e funcionamento dos botoes -- ARRUMAR DEPOIS
+    /*  letras.forEach { letra ->
+            val buttonId = resources.getIdentifier("btn_${letra.toLowerCase()}", "id", packageName)
+            val button = findViewById<ImageButton>(buttonId)
+
+            button.setOnClickListener {
+                this.letra = letra
+                validarLetra()
+
+                val drawableId = resources.getIdentifier("letra_${letra.toLowerCase()}_correta", "drawable", packageName)
+
+                if (forca.getPalavraSecreta().contains(letra)) {
+                    button.setBackgroundResource(drawableId)
+                } else {
+                    button.isEnabled = false
+                    button.background = null
+                }
+            }
+        }*/
+
+
     }
 
+    // Função para verificar o estado do jogo e tomar decisões com base nisso
     fun verificar(){
 
         if ('_' !in forca.palavraAdivinhada){
+            //passando resultados para outra activity
             intentResultado.putExtra("resultado", "Parabens! você acertou")
-            intentResultado.putExtra("palavra", palavraEscondida)
+            intentResultado.putExtra("palavra", forca.getPalavraSecreta())
             startActivity(intentResultado)
         }else if (forca.tentativasRestantes <= 0){
+            //passando resultados para outra activity
             intentResultado.putExtra("resultado", "Voce perdeu!")
-            intentResultado.putExtra("palavra", palavraEscondida)
+            intentResultado.putExtra("palavra", forca.getPalavraSecreta())
             startActivity(intentResultado)
         }
 

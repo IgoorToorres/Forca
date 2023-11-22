@@ -1,6 +1,7 @@
 package com.example.forca
 
 class Palavras {
+    //lista com todas as categorias e palavras para o jogo
     val lista = mutableMapOf(
         "Alimentos" to "BANANA",
         "Alimentos" to "LARANJA",

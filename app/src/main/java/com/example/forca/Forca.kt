@@ -4,16 +4,41 @@ import android.text.Editable
 import java.util.Scanner
 
 class Forca {
-
+    //Instância da classe Palavras para obter a lista de palavras
     val palavras = Palavras()
-    private val palavraCategoriaPair = palavras.lista.toList().shuffled().first()
-    private val palavraSecreta: String = palavraCategoriaPair.second
-    private val categoria: String = palavraCategoriaPair.first
 
+
+    // tentativa de nao vim palavra repetida -- ARRUMAR DEPOIS
+    //val listaPalavras = palavras.lista.toMutableMap()
+
+
+    // Par contendo a categoria e a palavra secreta escolhida aleatoriamente
+    private var palavraCategoriaPair = palavras.lista.toList().shuffled().first()
+
+    // Palavra secreta a ser adivinhada pelo jogador
+    private var palavraSecreta: String = palavraCategoriaPair.second
+
+    // Categoria da palavra secreta
+    private var categoria: String = palavraCategoriaPair.first
+
+    // Array de caracteres representando a palavra adivinhada, inicializado com '_'
     val palavraAdivinhada = CharArray(palavraSecreta.length) {'_'}
-    var tentativasRestantes: Int = 7
+
+    // Número de tentativas restantes para o jogador
+    var tentativasRestantes: Int = 8
 
 
+
+    //tentativa de nao vim palavra repetida -- ARRUMAR DEPOIS
+/*    fun trocarPalavraAleatoria(){
+        listaPalavras.remove(palavraCategoriaPair!!.first)
+        palavraCategoriaPair = listaPalavras.toList().shuffled().first()
+        palavraSecreta= palavraCategoriaPair.second
+        categoria = palavraCategoriaPair.first
+    }*/
+
+
+    // Método para verificar se uma letra está presente na palavra secreta
     fun verificarLetra(letra: Char){
         if (palavraSecreta.contains(letra.uppercaseChar())){
             for (i in palavraSecreta.indices){
@@ -26,6 +51,7 @@ class Forca {
         }
     }
 
+    // Método para verificar se um chute corresponde à palavra secreta
     fun verificarChute(chute: String){
         if(chute.uppercase() == palavraSecreta){
             for (i in palavraSecreta.indices){
@@ -36,13 +62,14 @@ class Forca {
         }
     }
 
+    // Método para obter a palavra secreta
     fun getPalavraSecreta():String{
         return this.palavraSecreta
     }
 
+    // Método para obter a categoria da palavra
     fun getCategoria():String{
         return categoria
-        System.out.println("teste")
     }
 
 }
