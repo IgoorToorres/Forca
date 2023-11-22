@@ -12,7 +12,10 @@ class Tela_resultado : AppCompatActivity() {
     lateinit var btnInicio: Button
     lateinit var txtResultado: TextView
     lateinit var palavraDesafio: TextView
+    lateinit var btnJogarNovamente: Button
     lateinit var intentInicio: Intent
+    lateinit var intentJogarNovamente: Intent
+
 
     // Função chamada na criação da atividade
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +29,11 @@ class Tela_resultado : AppCompatActivity() {
         btnInicio.setOnClickListener {
             startActivity(intentInicio)
         }
+
+        //Adiciona um listener ao botao jogar novamente poara jogar novamente
+        btnJogarNovamente.setOnClickListener {
+            startActivity(intentJogarNovamente)
+        }
     }
 
     // Função para inicializar os elementos da interface e exibir os resultados que foram passados pela classe Tela_forca
@@ -34,7 +42,10 @@ class Tela_resultado : AppCompatActivity() {
         btnInicio = findViewById(R.id.btn_inicio)
         txtResultado = findViewById(R.id.txt_resultado_final)
         palavraDesafio = findViewById(R.id.palavra_desafio)
+        btnJogarNovamente = findViewById(R.id.btn_jogar_novamente)
         intentInicio = Intent(this, MainActivity::class.java)
+        intentJogarNovamente = Intent(this, Tela_forca::class.java)
+
 
         // Obtém os dados da intent que foram passados pela tela anterior
         val mensagemFinal = intent.getStringExtra("resultado")
