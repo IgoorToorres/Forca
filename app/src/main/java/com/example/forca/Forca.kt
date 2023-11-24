@@ -5,15 +5,12 @@ import java.util.Scanner
 
 class Forca {
     //Instância da classe Palavras para obter a lista de palavras
-    val palavras = Palavras()
 
-
-    // tentativa de nao vim palavra repetida -- ARRUMAR DEPOIS
-    //val listaPalavras = palavras.lista.toMutableMap()
+    val palavras = Palavras.getInstance()
 
 
     // Par contendo a categoria e a palavra secreta escolhida aleatoriamente
-    private var palavraCategoriaPair = palavras.lista.toList().shuffled().first()
+    private var palavraCategoriaPair = palavras.getPalavras()
 
     // Palavra secreta a ser adivinhada pelo jogador
     private var palavraSecreta: String = palavraCategoriaPair.second
@@ -26,16 +23,6 @@ class Forca {
 
     // Número de tentativas restantes para o jogador
     var tentativasRestantes: Int = 8
-
-
-
-    //tentativa de nao vim palavra repetida -- ARRUMAR DEPOIS
-/*    fun trocarPalavraAleatoria(){
-        listaPalavras.remove(palavraCategoriaPair!!.first)
-        palavraCategoriaPair = listaPalavras.toList().shuffled().first()
-        palavraSecreta= palavraCategoriaPair.second
-        categoria = palavraCategoriaPair.first
-    }*/
 
 
     // Método para verificar se uma letra está presente na palavra secreta

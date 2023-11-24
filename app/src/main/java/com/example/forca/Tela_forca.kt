@@ -21,7 +21,6 @@ class Tela_forca : AppCompatActivity() {
     lateinit var inputChute : EditText
     lateinit var btnVerificar : Button
     lateinit var palavraSecreta: TextView
-    val palavraEscondida: String = forca.getPalavraSecreta()
     lateinit var intentResultado : Intent
     lateinit var caixaInputChute : TextInputLayout
     lateinit var txtCategoria : TextView
@@ -56,21 +55,6 @@ class Tela_forca : AppCompatActivity() {
     lateinit var btnZ: ImageButton
     lateinit var btnAtio: ImageButton
 
-    //tentativa de simplificar o codigo de instancia e funcionamento dos botoes -- ARRUMAR DEPOIS
-    /*    val botoesMap: Map<String, String> = mapOf(
-        "btnA" to "A", "btnB" to "B", "btnC" to "C", "btnD" to "D",
-        "btnE" to "E", "btnF" to "F", "btnG" to "G", "btnH" to "H",
-        "btnI" to "I", "btnJ" to "J", "btnK" to "K", "btnL" to "L",
-        "btnM" to "M", "btnN" to "N", "btnO" to "O", "btnP" to "P",
-        "btnQ" to "Q", "btnR" to "R", "btnS" to "S", "btnT" to "T",
-        "btnU" to "U", "btnV" to "V", "btnW" to "W", "btnX" to "X",
-        "btnY" to "Y", "btnZ" to "Z", "btnAtio" to "Ã"
-    )*/
-
-/*    val letras = listOf(
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ã'
-    )*/
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_forca)
@@ -79,24 +63,6 @@ class Tela_forca : AppCompatActivity() {
         txtCategoria.setText(forca.getCategoria())
         intentResultado = Intent(this,Tela_resultado::class.java)
         vidas.setText("${forca.tentativasRestantes}")
-
-        //tentativa de simplificar o codigo de instancia e funcionamento dos botoes -- ARRUMAR DEPOIS
- /*       botoesMap.forEach { (id, letraIt) ->
-            val id = findViewById<ImageButton>(resources.getIdentifier(id, "id", packageName))
-
-            id.setOnClickListener {
-                letra = letraIt.firstOrNull() ?: '\u0000'
-                validarLetra()
-
-                if (forca.getPalavraSecreta().contains(letra ?: '\u0000')) {
-                    val drawableId = resources.getIdentifier("letra_${letra?.toLowerCase()}_correta", "drawable", packageName)
-                    id.setBackgroundResource(drawableId)
-                } else {
-                    id.isEnabled = false
-                    id.background = null
-                }
-            }
-        }*/
 
         //fazendo a verificação ao clique de cada letra
         btnA.setOnClickListener{
@@ -450,27 +416,6 @@ class Tela_forca : AppCompatActivity() {
         btnY= findViewById(R.id.btn_y)
         btnZ= findViewById(R.id.btn_z)
         btnAtio= findViewById(R.id.btn_atio)
-
-        //tentativa de simplificar o codigo de instancia e funcionamento dos botoes -- ARRUMAR DEPOIS
-    /*  letras.forEach { letra ->
-            val buttonId = resources.getIdentifier("btn_${letra.toLowerCase()}", "id", packageName)
-            val button = findViewById<ImageButton>(buttonId)
-
-            button.setOnClickListener {
-                this.letra = letra
-                validarLetra()
-
-                val drawableId = resources.getIdentifier("letra_${letra.toLowerCase()}_correta", "drawable", packageName)
-
-                if (forca.getPalavraSecreta().contains(letra)) {
-                    button.setBackgroundResource(drawableId)
-                } else {
-                    button.isEnabled = false
-                    button.background = null
-                }
-            }
-        }*/
-
 
     }
 

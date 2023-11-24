@@ -1,81 +1,179 @@
 package com.example.forca
 
-class Palavras {
+class Palavras private constructor() {
     //lista com todas as categorias e palavras para o jogo
-    val lista = mutableMapOf(
-        "Alimentos" to "BANANA",
-        "Alimentos" to "LARANJA",
-        "Alimentos" to "OVO",
-        "Alimentos" to "UVA",
-        "Alimentos" to "PERA",
-        "Alimentos" to "BATATA",
-        "Alimentos" to "ARROZ",
-        "Alimentos" to "FRANGO",
-        "Alimentos" to "CARNE",
-
-        "Objetos" to "CADEIRA",
-        "Objetos" to "MESA",
-        "Objetos" to "COMPUTADOR",
-        "Objetos" to "MOUSE",
-        "Objetos" to "ESTANTE",
-        "Objetos" to "CARRO",
-        "Objetos" to "BICICLETA",
-        "Objetos" to "TELEVISÃO",
-
-        "Ação" to "CORRER",
-        "Ação" to "ANDAR",
-        "Ação" to "COMER",
-        "Ação" to "CAMINHAR",
-        "Ação" to "CONVERSAR",
-        "Ação" to "FAZER",
-        "Ação" to "COZINHAR",
-        "Ação" to "CANTAR",
-        "Ação" to "TOCAR",
-        "Ação" to "MERGULHAR",
-
-        "Cep" to "BRASIL",
-        "Cep" to "PORTUGAL",
-        "Cep" to "INGLATERRA",
-        "Cep" to "ESLOVENIA",
-        "Cep" to "IRLANDA",
-        "Cep" to "JAPÃO",
-        "Cep" to "CHINA",
-        "Cep" to "ORLANDO",
-        "Cep" to "CANADA",
-
-        "Filme" to "TITANIC",
-        "Filme" to "MEGAMENTE",
-        "Filme" to "INTERESTELAR",
-        "Filme" to "ENROLADOS",
-        "Filme" to "RATATOUILLE",
-        "Filme" to "MADAGASCAR",
-        "Filme" to "SHEREK",
-
-        "Marca" to "GUCCI",
-        "Marca" to "LACOSTE",
-        "Marca" to "PRADA",
-        "Marca" to "BMW",
-        "Marca" to "DIOR",
-        "Marca" to "VIVARA",
-        "Marca" to "NIKE",
-        "Marca" to "ADIDAS",
-        "Marca" to "ROLEX",
-        "Marca" to "MERCEDES",
-        "Marca" to "LUPO",
-        "Marca" to "AUDI",
-        "Marca" to "VANS",
-        "Marca" to "DISNEY",
-        "Marca" to "INTEL",
-        "Marca" to "PEUGEOT",
-
-        "Esporte" to "FUTEBOL",
-        "Esporte" to "BASQUETE",
-        "Esporte" to "HANDEBOL",
-        "Esporte" to "FUTSAL",
-        "Esporte" to "GOLFE",
-        "Esporte" to "SKATE",
-        "Esporte" to "SURFE",
-        "Esporte" to "XADREZ",
-
+    val lista = listOf(
+        Pair("Alimentos", "BANANA"),
+        Pair("Alimentos", "LARANJA"),
+        Pair("Alimentos", "OVO"),
+        Pair("Alimentos", "UVA"),
+        Pair("Alimentos", "PERA"),
+        Pair("Alimentos", "BATATA"),
+        Pair("Alimentos", "ARROZ"),
+        Pair("Alimentos", "FRANGO"),
+        Pair("Alimentos", "CARNE"),
+        Pair("Alimentos", "QUEIJO"),
+        Pair("Alimentos", "CHOCOLATE"),
+        Pair("Alimentos", "ALFACE"),
+        Pair("Alimentos", "MANGA"),
+        Pair("Alimentos", "ABACATE"),
+        Pair("Alimentos", "ABACAXI"),
+        Pair("Alimentos", "SALMÃO"),
+        Pair("Alimentos", "MORANGO"),
+        Pair("Alimentos", "LIMÃO"),
+        Pair("Alimentos", "MACARRÃO"),
+        Pair("Alimentos", "FEIJÃO"),
+        Pair("Alimentos", "PRESUNTO"),
+        Pair("Objetos", "CADEIRA"),
+        Pair("Objetos", "MESA"),
+        Pair("Objetos", "COMPUTADOR"),
+        Pair("Objetos", "MOUSE"),
+        Pair("Objetos", "ESTANTE"),
+        Pair("Objetos", "CARRO"),
+        Pair("Objetos", "BICICLETA"),
+        Pair("Objetos", "TELEVISÃO"),
+        Pair("Objetos", "CANETA"),
+        Pair("Objetos", "COPO"),
+        Pair("Objetos", "CHAVE"),
+        Pair("Objetos", "LIVRO"),
+        Pair("Objetos", "FACA"),
+        Pair("Objetos", "GARFO"),
+        Pair("Objetos", "BOLSA"),
+        Pair("Objetos", "TAPETE"),
+        Pair("Objetos", "ESPELHO"),
+        Pair("Objetos", "CONTROLE"),
+        Pair("Objetos", "CARRO"),
+        Pair("Objetos", "COBERTOR"),
+        Pair("Objetos", "VASO"),
+        Pair("Objetos", "FONE"),
+        Pair("Objetos", "ESCOVA"),
+        Pair("Ação", "CORRER"),
+        Pair("Ação", "ANDAR"),
+        Pair("Ação", "COMER"),
+        Pair("Ação", "CAMINHAR"),
+        Pair("Ação", "CONVERSAR"),
+        Pair("Ação", "FAZER"),
+        Pair("Ação", "COZINHAR"),
+        Pair("Ação", "CANTAR"),
+        Pair("Ação", "TOCAR"),
+        Pair("Ação", "MERGULHAR"),
+        Pair("Ação", "LER"),
+        Pair("Ação", "ESCREVER"),
+        Pair("Ação", "VIAJAR"),
+        Pair("Ação", "FUMAR"),
+        Pair("Ação", "AJUDAR"),
+        Pair("Ação", "JOGAR"),
+        Pair("Cep", "BRASIL"),
+        Pair("Cep", "PORTUGAL"),
+        Pair("Cep", "INGLATERRA"),
+        Pair("Cep", "ESLOVENIA"),
+        Pair("Cep", "IRLANDA"),
+        Pair("Cep", "JAPÃO"),
+        Pair("Cep", "CHINA"),
+        Pair("Cep", "ORLANDO"),
+        Pair("Cep", "CANADA"),
+        Pair("Filme", "TITANIC"),
+        Pair("Filme", "MEGAMENTE"),
+        Pair("Filme", "INTERESTELAR"),
+        Pair("Filme", "ENROLADOS"),
+        Pair("Filme", "RATATOUILLE"),
+        Pair("Filme", "MADAGASCAR"),
+        Pair("Filme", "SHEREK"),
+        Pair("Filme", "AVATAR"),
+        Pair("Filme", "MATRIX"),
+        Pair("Filme", "BATMAN"),
+        Pair("Filme", "SCARFACE"),
+        Pair("Marca", "GUCCI"),
+        Pair("Marca", "LACOSTE"),
+        Pair("Marca", "PRADA"),
+        Pair("Marca", "BMW"),
+        Pair("Marca", "DIOR"),
+        Pair("Marca", "VIVARA"),
+        Pair("Marca", "NIKE"),
+        Pair("Marca", "ADIDAS"),
+        Pair("Marca", "ROLEX"),
+        Pair("Marca", "MERCEDES"),
+        Pair("Marca", "LUPO"),
+        Pair("Marca", "AUDI"),
+        Pair("Marca", "VANS"),
+        Pair("Marca", "DISNEY"),
+        Pair("Marca", "INTEL"),
+        Pair("Marca", "PEUGEOT"),
+        Pair("Esporte", "FUTEBOL"),
+        Pair("Esporte", "BASQUETE"),
+        Pair("Esporte", "HANDEBOL"),
+        Pair("Esporte", "FUTSAL"),
+        Pair("Esporte", "GOLFE"),
+        Pair("Esporte", "SKATE"),
+        Pair("Esporte", "SURFE"),
+        Pair("Esporte", "XADREZ"),
+        Pair("Esporte", "ESCALADA"),
+        Pair("Esporte", "RUGBY"),
+        Pair("Esporte", "BOXE"),
+        Pair("Animal", "POLVO"),
+        Pair("Animal", "MACACO"),
+        Pair("Animal", "GIRAFA"),
+        Pair("Animal", "LEÃO"),
+        Pair("Animal", "PEIXE"),
+        Pair("Animal", "CACHORRO"),
+        Pair("Animal", "GATO"),
+        Pair("Animal", "POMBO"),
+        Pair("Animal", "COBRA"),
+        Pair("Animal", "BORBOLETA"),
+        Pair("Animal", "URSO"),
+        Pair("Animal", "ABELHA"),
+        Pair("Animal", "GOLFINHO"),
+        Pair("Animal", "CANGURU"),
+        Pair("Animal", "PATO"),
+        Pair("Animal", "ESQUILO"),
+        Pair("Animal", "SAPO"),
+        Pair("Animal", "GALINHA"),
+        Pair("Animal", "VACA"),
+        Pair("Animal", "ELEFANTE"),
+        Pair("Animal", "CAVALO"),
     )
+
+
+    private val listaEmbaralhada = lista.toList().shuffled()
+    private val listaRepetidos = mutableSetOf<String>()
+
+    private var indiceAtual = 0
+
+    fun getPalavras(): Pair<String, String> {
+        // Verifica se todas as palavras já foram escolhidas
+        if (listaRepetidos.size == lista.size) {
+            // Se sim, limpa o conjunto para recomeçar
+            listaRepetidos.clear()
+            // Embaralha a lista novamente
+            indiceAtual = 0
+            listaEmbaralhada.shuffled()
+        }
+
+        // Obtém a próxima palavra e categoria
+        val palavraEcategoriaRandom = listaEmbaralhada[indiceAtual]
+
+        // Incrementa o índice para a próxima chamada
+        indiceAtual++
+
+        // Adiciona a palavra ao conjunto de palavras já escolhidas
+        listaRepetidos.add(palavraEcategoriaRandom.second)
+
+        // Retorna a palavra e a categoria
+        return palavraEcategoriaRandom
+    }
+
+    companion object {
+        // Volatile garante que as alterações feitas por uma thread sejam visíveis para outras threads
+        @Volatile
+        private var instance: Palavras? = null
+
+        // Método estático para obter a instância única da classe
+        fun getInstance(): Palavras =
+            // Elvis operator (?:) verifica se 'instance' é nulo
+            instance ?: synchronized(this) {
+                // Se 'instance' ainda for nulo, cria uma nova instância de Palavras
+                instance ?: Palavras().also { instance = it }
+            }
+    }
+
 }
