@@ -22,7 +22,7 @@ class Forca {
     val palavraAdivinhada = CharArray(palavraSecreta.length) {'_'}
 
     // Número de tentativas restantes para o jogador
-    var tentativasRestantes: Int = 8
+    var tentativasRestantes: Int = 6
 
 
     // Método para verificar se uma letra está presente na palavra secreta

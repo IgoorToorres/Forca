@@ -25,6 +25,7 @@ class Tela_forca : AppCompatActivity() {
     lateinit var caixaInputChute : TextInputLayout
     lateinit var txtCategoria : TextView
     var letra: Char? = null
+    lateinit var forcaImg: ImageView
 
     //botoes letras
     lateinit var btnA: ImageButton
@@ -68,6 +69,7 @@ class Tela_forca : AppCompatActivity() {
         btnA.setOnClickListener{
             letra = 'A'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnA.setBackgroundResource(R.drawable.letra_a_correta)
             }else{
@@ -78,6 +80,7 @@ class Tela_forca : AppCompatActivity() {
         btnB.setOnClickListener{
             letra = 'B'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnB.setBackgroundResource(R.drawable.letra_b_correta)
             }else{
@@ -88,6 +91,7 @@ class Tela_forca : AppCompatActivity() {
         btnC.setOnClickListener{
             letra = 'C'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnC.setBackgroundResource(R.drawable.letra_c_correta)
             }else{
@@ -98,6 +102,7 @@ class Tela_forca : AppCompatActivity() {
         btnD.setOnClickListener{
             letra = 'D'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnD.setBackgroundResource(R.drawable.letra_d_correta)
             }else{
@@ -108,6 +113,7 @@ class Tela_forca : AppCompatActivity() {
         btnE.setOnClickListener{
             letra = 'E'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnE.setBackgroundResource(R.drawable.letra_e_correta)
             }else{
@@ -118,6 +124,7 @@ class Tela_forca : AppCompatActivity() {
         btnF.setOnClickListener{
             letra = 'F'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnF.setBackgroundResource(R.drawable.letra_f_correta)
             }else{
@@ -128,6 +135,7 @@ class Tela_forca : AppCompatActivity() {
         btnG.setOnClickListener{
             letra = 'G'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnG.setBackgroundResource(R.drawable.letra_g_correta)
             }else{
@@ -138,6 +146,7 @@ class Tela_forca : AppCompatActivity() {
         btnH.setOnClickListener{
             letra = 'H'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnH.setBackgroundResource(R.drawable.letra_h_correta)
             }else{
@@ -148,6 +157,7 @@ class Tela_forca : AppCompatActivity() {
         btnI.setOnClickListener{
             letra = 'I'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnI.setBackgroundResource(R.drawable.letra_i_correta)
             }else{
@@ -158,6 +168,7 @@ class Tela_forca : AppCompatActivity() {
         btnJ.setOnClickListener{
             letra = 'J'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnJ.setBackgroundResource(R.drawable.letra_j_correta)
             }else{
@@ -168,6 +179,7 @@ class Tela_forca : AppCompatActivity() {
         btnK.setOnClickListener{
             letra = 'K'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnK.setBackgroundResource(R.drawable.letra_k_correta)
             }else{
@@ -178,6 +190,7 @@ class Tela_forca : AppCompatActivity() {
         btnL.setOnClickListener{
             letra = 'L'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnL.setBackgroundResource(R.drawable.letra_l_correta)
             }else{
@@ -188,6 +201,7 @@ class Tela_forca : AppCompatActivity() {
         btnM.setOnClickListener{
             letra = 'M'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnM.setBackgroundResource(R.drawable.letra_m_correta)
             }else{
@@ -198,6 +212,7 @@ class Tela_forca : AppCompatActivity() {
         btnN.setOnClickListener{
             letra = 'N'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnN.setBackgroundResource(R.drawable.letra_n_correta)
             }else{
@@ -208,6 +223,7 @@ class Tela_forca : AppCompatActivity() {
         btnO.setOnClickListener{
             letra = 'O'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnO.setBackgroundResource(R.drawable.letra_o_correta)
             }else{
@@ -218,6 +234,7 @@ class Tela_forca : AppCompatActivity() {
         btnP.setOnClickListener{
             letra = 'P'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnP.setBackgroundResource(R.drawable.letra_p_correta)
             }else{
@@ -228,6 +245,7 @@ class Tela_forca : AppCompatActivity() {
         btnQ.setOnClickListener{
             letra = 'Q'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnQ.setBackgroundResource(R.drawable.letra_q_correta)
             }else{
@@ -238,6 +256,7 @@ class Tela_forca : AppCompatActivity() {
         btnR.setOnClickListener{
             letra = 'R'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnR.setBackgroundResource(R.drawable.letra_r_correta)
             }else{
@@ -248,6 +267,7 @@ class Tela_forca : AppCompatActivity() {
         btnS.setOnClickListener{
             letra = 'S'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnS.setBackgroundResource(R.drawable.letra_s_correta)
             }else{
@@ -258,6 +278,7 @@ class Tela_forca : AppCompatActivity() {
         btnT.setOnClickListener{
             letra = 'T'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnT.setBackgroundResource(R.drawable.letra_t_correta)
             }else{
@@ -268,6 +289,7 @@ class Tela_forca : AppCompatActivity() {
         btnU.setOnClickListener{
             letra = 'U'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnU.setBackgroundResource(R.drawable.letra_u_correta)
             }else{
@@ -278,6 +300,7 @@ class Tela_forca : AppCompatActivity() {
         btnV.setOnClickListener{
             letra = 'V'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnV.setBackgroundResource(R.drawable.letra_v_correta)
             }else{
@@ -288,6 +311,7 @@ class Tela_forca : AppCompatActivity() {
         btnW.setOnClickListener{
             letra = 'W'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnW.setBackgroundResource(R.drawable.letra_w_correta)
             }else{
@@ -298,6 +322,7 @@ class Tela_forca : AppCompatActivity() {
         btnX.setOnClickListener{
             letra = 'X'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnX.setBackgroundResource(R.drawable.letra_x_correta)
             }else{
@@ -308,6 +333,7 @@ class Tela_forca : AppCompatActivity() {
         btnY.setOnClickListener{
             letra = 'Y'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnY.setBackgroundResource(R.drawable.letra_y_correta)
             }else{
@@ -318,6 +344,7 @@ class Tela_forca : AppCompatActivity() {
         btnZ.setOnClickListener{
             letra = 'Z'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnZ.setBackgroundResource(R.drawable.letra_z_correta)
             }else{
@@ -328,6 +355,7 @@ class Tela_forca : AppCompatActivity() {
         btnAtio.setOnClickListener{
             letra = 'Ã'
             validarLetra()
+            verificarImgForca()
             if(forca.getPalavraSecreta().contains(letra!!)){
                 btnAtio.setBackgroundResource(R.drawable.letra_atio_correta)
             }else{
@@ -366,6 +394,23 @@ class Tela_forca : AppCompatActivity() {
 
     }
 
+
+    fun verificarImgForca(){
+        if(forca.tentativasRestantes == 5){
+            forcaImg.setBackgroundResource(R.drawable.forca_2)
+        }else if(forca.tentativasRestantes == 4){
+            forcaImg.setBackgroundResource(R.drawable.forca_3)
+        }else if(forca.tentativasRestantes == 3){
+            forcaImg.setBackgroundResource(R.drawable.forca_4)
+        }else if(forca.tentativasRestantes == 2){
+            forcaImg.setBackgroundResource(R.drawable.forca_5)
+        }else if(forca.tentativasRestantes == 1){
+            forcaImg.setBackgroundResource(R.drawable.forca_6)
+        }else if(forca.tentativasRestantes == 0){
+            forcaImg.setBackgroundResource(R.drawable.forca_7)
+        }
+    }
+
     // Função para validar uma letra escolhida pelo usuário
     fun validarLetra(){
         // Verifica se o jogo ainda está em andamento
@@ -389,6 +434,7 @@ class Tela_forca : AppCompatActivity() {
         palavraSecreta.setText(forca.palavraAdivinhada.joinToString("  "))
         caixaInputChute = findViewById(R.id.caixa_input_chute)
         txtCategoria = findViewById(R.id.txt_categoria)
+        forcaImg = findViewById(R.id.forca_img)
         btnA= findViewById(R.id.btn_a)
         btnB= findViewById(R.id.btn_b)
         btnC= findViewById(R.id.btn_c)
